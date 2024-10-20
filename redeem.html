@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redeem Voucher</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Voucher Section -->
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card p-4 shadow-lg">
+            <h2 class="text-center mb-4">Redeem Voucher Kamoo</h2>
+            <div id="voucher-error" class="alert alert-danger d-none">Jih Salah</div>
+            <div class="mb-3">
+                <input type="text" id="voucher-code" class="form-control" placeholder="Enter voucher code">
+            </div>
+            <button class="btn btn-success w-100" id="redeem-btn">Redeem</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('redeem-btn').addEventListener('click', function() {
+            const voucherCode = document.getElementById('voucher-code').value;
+            const predefinedCode = 'ULTAH23HANNA';
+
+            if (voucherCode === predefinedCode) {
+                window.location.href = "products.html";  // Redirect to product selection
+            } else {
+                document.getElementById('voucher-error').classList.remove('d-none');
+            }
+        });
+    </script>
+</body>
+</html>
